@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.less']
 })
 export class HomeComponent implements OnInit {
+  bannerTitle: string = "";
+  bannerDetails: object = [];
 
-  constructor() { }
+  constructor(
+    private location: Location
+  ) { }
+
+  contactTracing() {
+    console.log("click", this.location)
+    // this.location.go('/contra-covid')
+    this.location.go('/contact-tracing')
+  }
 
   ngOnInit(): void {
+    this.bannerTitle = "Hello World";
+    this.bannerDetails = [
+      "ConTra means Contact Tracing.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a augue neque. Integer ullamcorper tempor tempor. Aenean blandit.",
+      "To view a sample form using AngularJS, click the button."
+    ];
   }
 
 }
