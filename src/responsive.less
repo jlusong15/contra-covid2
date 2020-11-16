@@ -1,13 +1,28 @@
 @import "styles.less";
 
 @media only screen and (max-width: 767px) {
-    .body-home {
-      background-position: top center;
-      background-size: cover;
-      .banner-wrapper {
-        padding-bottom: 20px;
-        margin-top: 30px;
-        background-color: @mainBackground;
+  .body-home {
+    background-position: top center;
+    background-size: cover;
+    .banner-wrapper {
+      padding-bottom: 20px;
+      margin-top: 30px;
+      background-color: @whiteOpacity;
+    }
+  }
+
+  // nav
+  .navbar {
+    .navbar-header {
+      height: 66px;
+      .navbar-toggle {
+        padding: 16px 10px;
+      }
+    }
+    ul.navbar-nav {
+      li {
+        padding: 0px;
       }
     }
   }
+}

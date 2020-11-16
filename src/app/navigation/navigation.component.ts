@@ -8,7 +8,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./navigation.component.less']
 })
 export class NavigationComponent implements OnInit {
-  navList : object = this.router.config;
+  navList : object = [];
   test : string = ""
 
   constructor(
@@ -17,7 +17,7 @@ export class NavigationComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    this.navList = this.navList.filter(object => {
+    this.navList = this.router.config.filter(object => {
       if (object.path != 'home') {
         return object
       }
