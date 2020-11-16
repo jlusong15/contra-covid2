@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-navigation',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.less']
 })
 export class NavigationComponent implements OnInit {
+  navList : object = this.router.config;
+  test : string = ""
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private location: Location
+    ) {}
 
   ngOnInit(): void {
+    this.navList = this.navList.filter(object => {
+      if (object.path != 'home') {
+        return object
+      }
+    });
+    console.log('configured routes: ', this.navList);
   }
 
 }

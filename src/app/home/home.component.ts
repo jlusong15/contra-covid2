@@ -14,12 +14,6 @@ export class HomeComponent implements OnInit {
     private location: Location
   ) { }
 
-  contactTracing() {
-    console.log("click", this.location)
-    // this.location.go('/contra-covid')
-    this.location.go('/contact-tracing')
-  }
-
   ngOnInit(): void {
     this.bannerTitle = "Hello World";
     this.bannerDetails = [
