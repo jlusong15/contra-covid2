@@ -20,6 +20,7 @@ export class AppComponent {
       this.currentPath = this.router.url.replace('/','')
       this.currentPath = (this.currentPath == "") ? 'home': this.currentPath;
       this.renderer.addClass(document.body, "body-" + this.currentPath);
+      document.documentElement.style.height = "100%"
     })
   }
 

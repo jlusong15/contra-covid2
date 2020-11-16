@@ -1,2 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.min.css';
+// @import '~bootstrap/dist/css/bootstrap.min.css';
+@base: #4167b4;
+@baseDarker: #2e458c;
+@mainBackground: #e9feff;
+@navOpacity: #e9feff7d;
+@whiteOpacity: #ffffff94;
+@whiteOpacity2: #ffffff94;
+@gray: #ececec;
+@darkGray: #535353;
+@lightGray: #959595;
+@ligherGray: #b7b7b7;
+@white: #fff;
+@stepperGray: #b4b4b4;
+@error: #cc3535;
+
+.clear-both {
+    clear: both
+}
+
+.p-0 {
+    padding: 0px;
+}
+
+.m-0 {
+    margin: 0px
+}
+
+// body css
+.body-home {
+    background-color: @mainBackground;
+    background-image: url(./assets/images/home-bg.jpg);
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: hidden;
+    .navbar {
+        background-image: none;
+        background-color: @whiteOpacity;
+        border-radius: 0px;
+        ul {
+            li {
+                padding: 8px;
+                cursor: pointer;
+                &:hover {
+                    background-color: @ligherGray;
+                }
+            }
+        }
+    }
+}
