@@ -1,0 +1,48 @@
+@import "app.global.less";
+
+html, body {
+  height: 100%;
+  &.body-home {
+    background-color: @mainBackground;
+    background-image: url(/assets/images/home-bg.jpg);
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: hidden;
+    .navbar {
+      background-image: none!important;
+    }
+    .container {
+      padding-top: 30px;
+      .banner-wrapper {
+        padding-bottom: 20px;
+      }
+      .home-details {
+        font-size: 20px
+      }
+      .btn-contact-tracing {
+        margin-top: 10px;
+        background-color: @base;
+        background-image: none;
+        border: none;
+        padding: 10px 50px;
+        &:hover {
+          background-color: @baseDarker;
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  .body-home {
+    background-position: top center;
+    background-size: cover!important;
+    .banner-wrapper {
+      padding-bottom: 20px;
+      margin-top: 30px;
+      background-color: @mainBackground!important;
+    }
+  }
+}
