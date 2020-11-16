@@ -1,6 +1,36 @@
 @import "styles.less";
 
-@media only screen and (max-width: 767px) {
+
+@media only screen and (max-width: 1000px) {
+  .body-about {
+    .banner-wrapper {
+      padding: 20px;
+      .banner {
+        text-align: left;
+        padding: 0px;
+      }
+    }
+    .page-content {
+      padding: 20px;
+      font-size: 14px;
+    }
+    .article-wrapper {
+      margin: 0px;
+      padding: 10px;
+    }
+    .team-content {
+      padding: 30px 10px;
+    }
+    .team-img {
+      text-align: center;
+      padding: 0px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
   .body-home {
     background-position: top center;
     background-size: cover;
@@ -8,6 +38,12 @@
       padding-bottom: 20px;
       margin-top: 30px;
       background-color: @whiteOpacity;
+    }
+  }
+
+  .body-about {
+    .banner-wrapper {
+      padding-top: 80px!important;
     }
   }
 

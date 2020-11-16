@@ -1,0 +1,71 @@
+@import "../../styles.less";
+
+.body-about {
+    .page-content {
+    padding: 50px 0px;
+    font-size: 16px;
+    }
+    .article-wrapper{
+    background-color: @gray;
+    margin: 0px;
+    padding: 30px 0px 45px 0px;
+    .section-title {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .article-section {
+        margin: auto;
+        max-width: 1300px;
+        .article-post {
+        text-align: center;
+        h3 {
+            font-weight: bold;
+        }
+        img {
+            max-width: 300px;
+            -webkit-transition: opacity .5s ease-in-out;
+            -moz-transition: opacity .5s ease-in-out;
+            -o-transition: opacity .5s ease-in-out;
+            transition: opacity .5s ease-in-out;
+            border-radius: 5px;
+            &:hover {
+            cursor: pointer;
+            color: @baseDarker;
+            opacity: .5;
+            }
+        }
+        .article-title{
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            &:hover {
+            cursor: pointer;
+            color: @baseDarker
+            }
+        }
+        .article-content {
+            padding: 10px 20px;
+            &:hover {
+                cursor: pointer;
+                    color: @baseDarker
+                    }
+                }
+            }
+        }
+    }
+    .team-section {
+    // padding: 50px 10px;
+    .team-content {
+        padding: 50px 10px;
+    }
+    .team-img {
+        text-align: right;
+        padding-top: 20px;
+        margin-top: 20px;
+        img {
+            max-width: 200px;
+            }
+        }
+    }
+}
+
