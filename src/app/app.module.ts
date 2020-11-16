@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { ContraCovidComponent } from './contra-covid/contra-covid.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    ContraCovidComponent
+    ContraCovidComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

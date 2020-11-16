@@ -1,15 +1,30 @@
-<link rel="stylesheet/less" type="text/less" href="pages/home/home.less" />
-<div class="container theme-showcase" role="main">
-
-  <div class="row banner-wrapper">
-    <div class="col-md-6">
-      <h1 class="homePage">Hellow World</h1>
-      <span class="home-details">
-        <p ng-repeat="text in bannerDetails">sadasdas</p>
-      </span>
-      <button class="btn btn-primary btn-contact-tracing" ng-click="contactTracing()">FILL UP THE FORM</button>
+<div>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" rel="home" href="#" title="Brand">
+          <img style="max-width:250px;" src="./assets/images/logo.png">
+        </a>
+      </div>
+  
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+          <li ui-sref-active="active"><a ui-sref="about">About</a></li>
+          <li ui-sref-active="active"><a ui-sref="contactTracing">Contact Tracing</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
     </div>
-    <div class="col-md-6"></div>
-  </div>
+    <!-- /.container-fluid -->
+  </nav>
   <router-outlet></router-outlet>
 </div>
