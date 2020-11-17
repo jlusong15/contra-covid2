@@ -1,41 +1,43 @@
 @import "styles.less";
 
 @media only screen and (max-width: 768px) {
-  .navbar-default {
-    position: fixed;
-    width: 100%;
-    z-index: 9;
-    background: @mainBackground;
-    .navbar-header {
-      height: 66px;
-      .navbar-toggle {
-        padding: 16px 10px;
+  body {
+    .navbar-default {
+      position: fixed;
+      width: 100%;
+      z-index: 9;
+      background: @mainBackground;
+      .navbar-header {
+        height: 66px;
+        .navbar-toggle {
+          padding: 16px 10px;
+        }
+      }
+      ul.navbar-nav {
+        li {
+          padding: 0px;
+        }
       }
     }
-    ul.navbar-nav {
-      li {
-        padding: 0px;
+    
+    &.body-home {
+      background-position: top center;
+      background-size: cover;
+      .banner-wrapper {
+        padding-bottom: 20px;
+        margin-top: 30px;
+        background-color: @whiteOpacity;
       }
     }
-  }
   
-  .body-home {
-    background-position: top center;
-    background-size: cover;
-    .banner-wrapper {
-      padding-bottom: 20px;
-      margin-top: 30px;
-      background-color: @whiteOpacity;
+    &.body-about {
+      .banner-wrapper {
+        padding-top: 80px;
+      }
     }
-  }
-
-  .body-about {
-    .banner-wrapper {
-      padding-top: 80px;
+    
+    .container {
+      padding-top: 65px!important;
     }
-  }
-  
-  .container {
-    padding-top: 65px!important;
   }
 }

@@ -25,59 +25,66 @@
     margin: 0px
 }
 
-// body css
-.body-home {
-    background-color: @mainBackground;
-    background-image: url(./assets/images/home-bg.jpg);
-    background-position: center right;
-    background-repeat: no-repeat;
-    background-size: contain;
-    overflow: hidden;
-}
 
-.body-about {
-    background-color: @mainBackground;
-    .navbar {
-        background-color: @whiteOpacity;
-        border-radius: 0px;
-        margin-bottom: 0px;
+body {
+    font-family: Arial', Helvetica, sans-serif';
+    &.body-home {
+        background-color: @mainBackground;
         background-image: url(./assets/images/home-bg.jpg);
-        background-position: top right;
+        background-position: center right;
         background-repeat: no-repeat;
-        background-size: 770px;
+        background-size: contain;
+        overflow: hidden;
     }
-    .container {
-        width: 100%;
-        margin: 0px;
-        padding: 0px;
-        .banner-wrapper {
-            padding: 90px;
-            background: @baseDarker;
-            background-image: url(./assets/images/banner-about.jpg);
-            background-position: center right;
+
+    &.body-about {
+        background-color: @mainBackground;
+        .navbar {
+            background-color: @whiteOpacity;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            background-image: url(./assets/images/home-bg.jpg);
+            background-position: top right;
             background-repeat: no-repeat;
-            background-size: cover;
-            .banner {
-                text-align: center;
-                h2 {
-                    font-size: 40px;
+            background-size: 770px;
+        }
+        .container {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            .banner-wrapper {
+                padding: 90px;
+                background: @baseDarker;
+                background-image: url(./assets/images/banner-about.jpg);
+                background-position: center right;
+                background-repeat: no-repeat;
+                background-size: cover;
+                .banner {
+                    text-align: center;
+                    h2 {
+                        font-size: 40px;
+                    }
                 }
             }
         }
     }
-}
 
-.navbar {
-    background-color: @whiteOpacity;
-    border-radius: 0px;
-    margin-bottom: 0px;
-    ul {
-        li {
-            padding: 8px;
-            cursor: pointer;
-            &:hover {
-                background-color: @ligherGray;
+    .navbar {
+        background-color: @whiteOpacity;
+        border-radius: 0px;
+        margin-bottom: 0px;
+        ul {
+            li {
+                padding: 8px;
+                cursor: pointer;
+                &:hover {
+                    background-color: @ligherGray;
+                }
             }
         }
     }
+    .innerpage-container {
+        min-height: 625px;
+    }    
 }
+

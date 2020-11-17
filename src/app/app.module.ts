@@ -8,7 +8,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactTracingComponent } from './pages/contact-tracing/contact-tracing.component';
 import { ContactDetailsComponent } from './components/contact-details/contact-details.component';
 import { HomeComponent } from './pages/home/home.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     ContactTracingComponent,
     ContactDetailsComponent,
     HomeComponent,
-    NavigationComponent
+    NavigationComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
