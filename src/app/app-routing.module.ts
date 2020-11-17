@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContactTracingComponent } from './pages/contact-tracing/contact-tracing.component';
 import { AboutComponent } from './pages/about/about.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Home' } },
