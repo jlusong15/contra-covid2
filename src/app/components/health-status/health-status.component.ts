@@ -12,22 +12,34 @@ export class HealthStatusComponent implements OnInit {
   currentStep = 2
   isInvalid = false
   step2Form = this.fb.group({ });
-  isAdditionalInfoShow = true
+  isAdditionalInfoShow = false
 
   constructor(private fb: FormBuilder, private step: StepService) { }
   
   createFormGroup(data:any) {
     return this.fb.group({
-      temperature: [data && data.temperature ? data.temperature:'', Validators.required],
-      feeling: [data && data.feeling ? data.feeling:''],
-      hasCough: [data && data.hasCough != null ?data.hasCough: false],
-      hasCovidContact: [data && data.hasCovidContact != null ?data.hasCovidContact: false],
-      additionalInfo: [data && data.additionalInfo ?data.additionalInfo:''],
+      temperature: [data && data.temperature || '', Validators.required],
+      feeling: [data && data.feeling || 'well'],
+      hasCough: [data && data.hasCough ||  'no'],
+      hasCovidContact: [data && data.hasCovidContact || 'no'],
+      additionalInfo: [data && data.additionalInfo || ''],
     });
   }
 
-  handleCheckValid() {
-    console.log('handleCheckValid')
+  handleCovidContactChange({ target : { value } }) {
+    this.step2Form.patchValue({hasCovidContact : value})
+    this.isAdditionalInfoShow = value !== 'no'
+    if (value === 'no') {
+      this.step2Form.patchValue({additionalInfo : ''})
+    }
+  }
+
+  handleFeelingChange({ target : { value } }) {
+    this.step2Form.patchValue({feeling : value})
+  }
+
+  handleHasCoughChange({ target : { value } }) {
+    this.step2Form.patchValue({hasCough : value})
   }
 
   handleReset() {
@@ -35,7 +47,6 @@ export class HealthStatusComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.step2)
     this.step.getStep2.subscribe(data => {
       this.step2Form = this.createFormGroup(data)
     })
@@ -45,6 +56,7 @@ export class HealthStatusComponent implements OnInit {
     this.isInvalid = !this.step2Form.valid
     this.step.updateStep2ValidStat(this.isInvalid)
     if (!this.isInvalid) {
+      console.log(this.step2Form.value)
       this.step.updateStep2(this.step2Form.value)
     }
     if (this.step.resetForm) {

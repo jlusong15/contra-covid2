@@ -14,21 +14,19 @@
       <label for="exampleInputEmail1" class="col-md-12 p-0">Feeling *</label>
       <div class="radio-inline">
         <label>
-          <input type="radio" name="feeling" id="optionsRadios1"
-          
-          value="well" checked>
+          <input type="radio" name="feeling" formControlName="feeling" (change)="handleFeelingChange($event)" id="optionsRadios1" value="well">
           Well
         </label>
       </div>
       <div class="radio-inline">
         <label>
-          <input type="radio" name="feeling" id="optionsRadios2"  value="nauseous">
+          <input type="radio" name="feeling" formControlName="feeling" (change)="handleFeelingChange($event)" id="optionsRadios2"  value="nauseous">
           Nauseous
         </label>
       </div>
       <div class="radio-inline">
         <label>
-          <input type="radio" name="feeling" id="optionsRadios3"  value="feverish">
+          <input type="radio" name="feeling" formControlName="feeling" (change)="handleFeelingChange($event)" id="optionsRadios3"  value="feverish">
           Feverish
         </label>
       </div>
@@ -40,13 +38,13 @@
       <label for="exampleInputEmail1" class="col-md-12 p-0">Do you have cough? *</label>
       <div class="radio-inline">
         <label>
-          <input type="radio" name="hasCough" id="optionsRadios1" value="yes">
+          <input type="radio" formControlName="hasCough" (change)="handleHasCoughChange($event)" name="hasCough" id="hasCough1" value="yes">
           Yes
         </label>
       </div>
       <div class="radio-inline">
         <label>
-          <input type="radio" name="hasCough" id="optionsRadios2" value="no" checked>
+          <input type="radio" formControlName="hasCough" (change)="handleHasCoughChange($event)" name="hasCough" id="hasCough2" value="no" checked>
           No
         </label>
       </div>
@@ -58,17 +56,19 @@
       <label for="exampleInputEmail1" class="col-md-12 p-0">Have you been in contact with any CoVid?</label>
       <div class="radio-inline">
         <label>
-        <!-- (change)="handleCovidContactChange()" -->
           <input type="radio"
-          name="hadCovidContact" id="optionsRadios1" value="yes">
+          formControlName="hasCovidContact"
+          (change)="handleCovidContactChange($event)"
+          name="hasCovidContact" id="optionsRadios1" value="yes">
           Yes
         </label>
       </div>
       <div class="radio-inline">
         <label>
-        <!-- (change)="handleCovidContactChange()" -->
           <input type="radio"
-          name="hadCovidContact" id="optionsRadios2" value="no" checked>
+          formControlName="hasCovidContact"
+          (change)="handleCovidContactChange($event)"
+          name="hasCovidContact" id="optionsRadios2" value="no">
           No
         </label>
       </div>
@@ -77,8 +77,6 @@
         type="text" name="additionalInfo"
         formControlName="additionalInfo"
         placeholder="If yes, input the details of that person: * ">
-      <!-- <small class="form-text text-muted error"
-        *ngIf="step2Form.get('isAdditionalInfoShow').touched && step2Form.get('isAdditionalInfoShow').status == 'INVALID'">This is a required field</small> -->
     </div>
   </form>
 </div>

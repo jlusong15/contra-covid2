@@ -16,10 +16,10 @@ export class ContactDetailsComponent implements OnInit {
   
   createFormGroup(data:any) {
     return this.fb.group({
-      fullName: [data && data.fullName ? data.fullName:'', Validators.required],
-      email: [data && data.email ? data.email:'', [Validators.required, Validators.email]],
-      contactNumber: [data && data.contactNumber ?data.contactNumber:'', Validators.required],
-      address: [data && data.address ? data.address:'', Validators.required],
+      fullName: [data && data.fullName || '', Validators.required],
+      email: [data && data.email || '', [Validators.required, Validators.email]],
+      contactNumber: [data && data.contactNumber || '', Validators.required],
+      address: [data && data.address || '', Validators.required],
     });
   }
 
@@ -32,8 +32,6 @@ export class ContactDetailsComponent implements OnInit {
     this.step.getStep1.subscribe(data => {
       this.step1Form = this.createFormGroup(data)
     })
-    // console.log(this.step.getCurrentStep)
-    // this.isInvalid = !this.step1Form.valid
   }
 
   ngDoCheck() {
@@ -46,7 +44,6 @@ export class ContactDetailsComponent implements OnInit {
       this.step1Form.reset()
       this.step.reset(false)
     }
-    // if()
   }
 
 }
