@@ -68,6 +68,10 @@ export class HealthStatusComponent implements OnInit {
       this.step2Form.reset()
       this.step.updateCurrentStep(1)
     }
+
+    if (this.step2Form.controls['hasCovidContact'].value === 'yes') {
+      this.isAdditionalInfoShow = true
+    }
   }
 
 }
