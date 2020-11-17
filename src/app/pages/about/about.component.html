@@ -1,1 +1,52 @@
-<h1>about works!222</h1>
+<div class="container theme-showcase" role="main">
+    <div class="row banner-wrapper m-0 p-0">
+      <div class="col-md-12 m-0 p-0 banner">
+        <h2>{{pageTitle}}</h2>
+      </div>
+    </div>
+    <div class="row m-0 p-0">
+      <div class="row m-0 p-0">
+        <div class="col-md-8 col-md-offset-2 page-content">
+          <p *ngFor = "let pContent of pageContent">{{pContent}}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row article-wrapper">
+      <div class="article-section m-0">
+        <div class="row m-0">
+          <div class="col-md-12 col-xs-12  section-title">
+            <h3>RECENTS ARTICLES</h3>
+          </div>
+          <div class="col-md-4 col-xs-12 article-post" *ngFor = "let article of articles">
+            <span class="col-md-12 col-xs-12 article-feat-img">
+              <img src="{{article.img}}">
+            </span>
+            <span class="col-md-12 col-xs-12 article-title">
+              {{article.title}}
+            </span>
+            <span class="col-md-12 col-xs-12 article-content">
+              {{article.description}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row m-0 p-0">
+      <div class="row m-0 p-0 team-section">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="col-md-9 col-xs-12 team-content">
+            <p *ngFor="let aboutUs of teamDescription">{{aboutUs}}</p>
+          </div>
+          <div class="col-md-3 col-xs-12 team-img">
+            <img src = "{{ teamPhoto }}" width="200">
+          </div>
+          
+          <div class="clear-both"></div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+  
