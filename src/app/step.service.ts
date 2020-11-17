@@ -19,8 +19,8 @@ export class StepService {
   private step2  = new BehaviorSubject<object>({
     temperature: '',
     feeling: false,
-    hadCough: false,
-    hadCovidContact: false,
+    hasCough: false,
+    hasCovidContact: false,
     additionalInfo: ''
   })
   public getStep2 = this.step2.asObservable();

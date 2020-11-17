@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { StepService } from '../../step.service'
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-contact-tracing',
@@ -32,6 +33,15 @@ export class ContactTracingComponent implements OnInit {
     this.currentStep = this.currentStep - 1
     console.log("back", this.currentStep);
     this.step.updateCurrentStep(this.currentStep)
+  }
+
+  handleReset() {
+    console.log("reset")
+    this.step.updateCurrentStep(1)
+  }
+
+  goBackHome() {
+    console.log("home")
   }
 
   ngOnInit(): void {

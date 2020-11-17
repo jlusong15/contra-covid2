@@ -12,6 +12,8 @@ import { ContactDetailsComponent } from './components/contact-details/contact-de
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HealthStatusComponent } from './components/health-status/health-status.component';
+import { PreviewDetailsComponent } from './components/preview-details/preview-details.component';
+import { SuccessNotifComponent } from './components/success-notif/success-notif.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HealthStatusComponent } from './components/health-status/health-status.
     HomeComponent,
     NavigationComponent,
     FooterComponent,
-    HealthStatusComponent
+    HealthStatusComponent,
+    PreviewDetailsComponent,
+    SuccessNotifComponent
   ],
   imports: [
     BrowserModule,
