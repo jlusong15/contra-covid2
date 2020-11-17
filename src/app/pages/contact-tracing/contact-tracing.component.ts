@@ -9,21 +9,6 @@ import { StepService } from '../../step.service'
 })
 export class ContactTracingComponent implements OnInit {
 
-  // step1Form = this.fb.group({
-  //   fullName: ['', Validators.required],
-  //   email: ['', [Validators.required, Validators.email]],
-  //   contactNumber: ['', Validators.required],
-  //   address: ['', Validators.required],
-  // });
-
-  // step2Form = this.fb.group({
-  //   temperature:  ['', Validators.required],
-  //   feeling: ['well'],
-  //   hasCough: ['no'],
-  //   hadCovidContact: ['no'],
-  //   additionalInfo: [null]
-  // });
-
   step1 = {}
 
   currentStep = 1
@@ -36,13 +21,14 @@ export class ContactTracingComponent implements OnInit {
     console.log('handleCheckValid', isValid)
   }
 
-  handleNextClick(currentStep) {
-    this.currentStep = currentStep + 1
-    // console.log('step1', this.currentStep);
+  handleNextClick() {
+    // this.currentStep = currentStep + 1
+    this.step.getCurrentStep.subscribe(step => this.currentStep = step)
+    console.log('step1', this.currentStep);
     // console.log(this.step1Form)
   }
 
-  handleBackClick(currentStep) {
+  handleBackClick() {
     this.currentStep = this.currentStep - 1
     // console.log('step1', this.currentStep);
   }
@@ -50,8 +36,11 @@ export class ContactTracingComponent implements OnInit {
   ngOnInit(): void {
     this.currentStep = 1
     this.step.getStep1.subscribe(data => this.step1 = data)
-    this.step.getCurrentStep.subscribe(data => this.currentStep = data)
     // this.isInvalid = !this.step1Form.valid
+  }
+
+  ngDoCheck() {
+    // this.step.getStep1.subscribe(data => this.step1 = data)
   }
 
 }

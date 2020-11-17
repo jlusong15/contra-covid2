@@ -12,74 +12,18 @@
 
   <div class="contactTracingForm">
       <!-- Step 1 -->
-      <app-contact-details (handleCheckValid)="handleCheckValid(currentStep)"></app-contact-details>
-      <!-- <div class="contactDetails" *ngIf="currentStep === 1">
-        <form name="form" [formGroup]="step1Form">
-          <div class="form-group form-group-lg" >
-            <label for="exampleInputEmail1">Full Name *</label>
-            <input id="fullName" name="fullName" class="form-control" 
-              formControlName="fullName"
-              [ngClass]="{'is-invalid' : step1Form.get('fullName').touched && step1Form.get('fullName').invalid}"
-              placeholder="FullName"
-            >
-            <small class="form-text text-muted error" *ngIf="step1Form.get('fullName').touched && step1Form.get('fullName').errors && step1Form.get('fullName').errors.required">This field is required.</small>
-          </div>
-
-          <div class="form-group form-group-lg">
-            <label for="exampleInputEmail1">Email *</label>
-            <input class="form-control" type="email" name="email"
-              formControlName="email"
-              [ngClass]="{'is-invalid' : step1Form.get('email').touched && step1Form.get('email').invalid}"
-              placeholder="Email Address *"
-            />
-            <small class="form-text text-muted error" *ngIf="step1Form.get('email').touched && step1Form.get('email').errors && step1Form.get('email').errors.required">This field is required.</small>
-            <small class="form-text text-muted error" *ngIf="step1Form.get('email').touched && step1Form.get('email').errors && step1Form.get('email').errors.email">Invalid Email.</small>
-          </div>
-
-          <div class="form-group form-group-lg">
-            <label for="exampleInputEmail1">Contact Number *</label>
-            <input class="form-control" type="number" name="contactNumber"
-              formControlName="contactNumber"
-              [ngClass]="{'is-invalid' : step1Form.get('contactNumber').touched && step1Form.get('contactNumber').invalid}"
-              placeholder="Contact Number *" 
-            />
-            <small class="form-text text-muted error" *ngIf="step1Form.get('contactNumber').touched && step1Form.get('contactNumber').errors && step1Form.get('contactNumber').errors.required">This field is required.</small>
-          </div>
-
-          <div class="form-group form-group-lg">
-            <label for="exampleInputEmail1">Address *</label>
-            <input class="form-control" type="text" name="address"
-              formControlName="address"
-              [ngClass]="{'is-invalid' : step1Form.get('address').touched && step1Form.get('address').invalid}"
-              placeholder="Address *" 
-            />
-            <small class="form-text text-muted error" *ngIf="step1Form.get('address').touched && step1Form.get('address').errors && step1Form.get('address').errors.required">This field is required.</small>
-          </div>
-        </form>
-      </div> -->
+      <div *ngIf="currentStep === 1">
+        <app-contact-details></app-contact-details>
+      </div>
 
       <div *ngIf="currentStep === 2">
-        aaa
-        <!-- <form name="form" [formGroup]="step1Form">
-          <div class="form-group form-group-lg" >
-            <label for="exampleInputEmail1">Temperature in Celsius (°C) *</label>
-            <input id="fullName" name="fullName" class="form-control" 
-              formControlName="temperature"
-              [ngClass]="{'is-invalid' : step1Form.get('fullName').touched && step1Form.get('fullName').invalid}"
-              placeholder="FullName"
-            >
-            <small class="form-text text-muted error" *ngIf="step1Form.get('fullName').touched && step1Form.get('fullName').errors && step1Form.get('fullName').errors.required">This field is required.</small>
-          </div>
-        </form> -->
+        <!-- <app-health-status></app-contact-details> -->
       </div>
-      <div *ngIf="currentStep === 3">Step3</div>
-      <div *ngIf="currentStep === 4">Step4</div>
-
+      {{ currentStep }}
+      {{ step1 | json}}
   </div>
-  Form Status: {{ step1 | json}}
-  currentStep {{ currentStep }}
   <div class='action-button'>
-    <button type="button" class="btn btn-lg btn-primary" (click)="handleBackClick(currentStep)">Back</button>
-    <button type="button" class="btn btn-lg btn-primary" (click)="handleNextClick(currentStep)" [disabled]="isInvalid">>Next</button>
+    <button type="button" class="btn btn-lg btn-primary" (click)="handleBackClick()">Back</button>
+    <button type="button" class="btn btn-lg btn-primary" (click)="handleNextClick()" [disabled]="isInvalid">>Next</button>
   </div>
 </div>
