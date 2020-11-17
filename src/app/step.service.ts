@@ -21,11 +21,9 @@ export class StepService {
     feeling: false,
     hadCough: false,
     hadCovidContact: false,
-    covidContact: ''
+    additionalInfo: ''
   })
   public getStep2 = this.step2.asObservable();
-
-  
 
   constructor() { }
 

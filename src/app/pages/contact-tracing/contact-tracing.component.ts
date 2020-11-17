@@ -10,7 +10,6 @@ import { StepService } from '../../step.service'
 export class ContactTracingComponent implements OnInit {
 
   step1 = {}
-
   currentStep = 1
 
   isInvalid = false
@@ -22,15 +21,18 @@ export class ContactTracingComponent implements OnInit {
   }
 
   handleNextClick() {
-    // this.currentStep = currentStep + 1
     this.step.getCurrentStep.subscribe(step => this.currentStep = step)
-    console.log('step1', this.currentStep);
-    // console.log(this.step1Form)
+    // this.currentStep = this.currentStep + 1
+    console.log("next", this.currentStep);
+    this.step.updateCurrentStep(this.currentStep)
   }
 
   handleBackClick() {
+    this.step.getCurrentStep.subscribe(step => this.currentStep = step)
     this.currentStep = this.currentStep - 1
-    // console.log('step1', this.currentStep);
+    console.log("back", this.currentStep);
+    this.step.updateCurrentStep(this.currentStep)
+    // console.log(this.currentStep);
   }
 
   ngOnInit(): void {

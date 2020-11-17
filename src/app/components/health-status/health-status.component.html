@@ -1,4 +1,5 @@
 <div class="contactDetails">
+  <form name="form" [formGroup]="step2Form">
     <div class="form-group form-group-lg" >
       <label for="exampleInputEmail1">Temperature in Celsius (°C) *</label>
       <input class="form-control"
@@ -75,6 +76,8 @@
         type="text" name="additionalInfo"
         formControlName="additionalInfo"
         placeholder="If yes, input the details of that person: * ">
-      <small class="form-text text-muted error" *ngIf="step2Form.get('additionalInfo').touched && step2Form.get('additionalInfo').invalid">This is a required field</small>
+      <small class="form-text text-muted error"
+        *ngIf="step2Form.get('additionalInfo').touched && step2Form.get('additionalInfo').invalid">This is a required field</small>
     </div>
-  </div>
+  </form>
+</div>

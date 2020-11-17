@@ -12,16 +12,17 @@ export class HealthStatusComponent implements OnInit {
   currentStep = 2
   isInvalid = false
   step2Form = this.fb.group({ });
-  isAdditionalInfoShow = false
+  isAdditionalInfoShow = true
 
   constructor(private fb: FormBuilder, private step: StepService) { }
   
   createFormGroup(data:any) {
     return this.fb.group({
-      fullName: [data?data.fullName:'', Validators.required],
-      email: [data?data.email:'', [Validators.required, Validators.email]],
-      contactNumber: [data?data.contactNumber:'', Validators.required],
-      address: [data?data.address:'', Validators.required],
+      temperature: [data?data.temperature:'', Validators.required],
+      feeling: [data?data.feeling:'', [Validators.required, Validators.email]],
+      hasCough: [data?data.hasCough:'', Validators.required],
+      hasCovidContact: [data?data.hasCovidContact:'', Validators.required],
+      additionalInfo: [data?data.additionalInfo:'', Validators.required],
     });
   }
 
@@ -41,7 +42,7 @@ export class HealthStatusComponent implements OnInit {
   ngDoCheck() {
     console.log('ngDoCheck', this.step2Form.value)
     this.step.updateStep2(this.step2Form.value)
-    this.step.updateCurrentStep(this.step2Form.valid ? this.currentStep + 1 : this.currentStep)
+    // this.step.updateCurrentStep(this.step2Form.valid ? this.currentStep + 1 : this.currentStep)
     // this.isInvalid = !this.step2Form.valid
   }
 
