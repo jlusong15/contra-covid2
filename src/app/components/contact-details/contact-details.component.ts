@@ -9,6 +9,7 @@ import { StepService } from '../../step.service';
 export class ContactDetailsComponent implements OnInit {
   step1 = {}
   currentStep = 1
+  isDirty = -1
   isInvalid = false
   step1Form = this.fb.group({ });
 
@@ -35,6 +36,10 @@ export class ContactDetailsComponent implements OnInit {
   }
 
   ngDoCheck() {
+    this.isDirty++
+    if (this.isDirty > 0) {
+      this.step1Form.markAllAsTouched();
+    }
     this.isInvalid = !this.step1Form.valid
     this.step.updateStep1ValidStat(this.isInvalid)
     if (!this.isInvalid) {

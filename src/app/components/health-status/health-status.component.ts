@@ -10,6 +10,7 @@ import { StepService } from '../../step.service';
 export class HealthStatusComponent implements OnInit {
   step2 = {}
   currentStep = 2
+  isDirty = -1
   isInvalid = false
   step2Form = this.fb.group({ });
   isAdditionalInfoShow = false
@@ -53,6 +54,10 @@ export class HealthStatusComponent implements OnInit {
   }
 
   ngDoCheck() {
+    this.isDirty++
+    if (this.isDirty > 0) {
+      this.step2Form.markAllAsTouched();
+    }
     this.isInvalid = !this.step2Form.valid
     this.step.updateStep2ValidStat(this.isInvalid)
     if (!this.isInvalid) {
