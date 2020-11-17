@@ -22,7 +22,6 @@ export class NavigationComponent implements OnInit {
         return object
       }
     });
-    console.log('configured routes: ', this.navList);
   }
 
 }

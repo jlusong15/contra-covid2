@@ -16,14 +16,10 @@ export class AppComponent {
   ) {}
 
   resetClass(el, newClass) {
-    console.log("reset", el , newClass)
     if (el && newClass) {
-      console.log("el.getAttribute('class')", )
       if (el.getAttribute('class')) {
         let classes = el.getAttribute('class').split(' '); // get all classes
-        console.log("classes", classes)
         classes.forEach((cl) => {
-          console.log("remove")
           this.renderer.removeClass(el, cl);
         });
       }

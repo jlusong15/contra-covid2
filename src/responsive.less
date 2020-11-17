@@ -1,36 +1,24 @@
 @import "styles.less";
 
-
-@media only screen and (max-width: 1000px) {
-  .body-about {
-    .banner-wrapper {
-      padding: 20px;
-      .banner {
-        text-align: left;
+@media only screen and (max-width: 768px) {
+  .navbar-default {
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    background: @mainBackground;
+    .navbar-header {
+      height: 66px;
+      .navbar-toggle {
+        padding: 16px 10px;
+      }
+    }
+    ul.navbar-nav {
+      li {
         padding: 0px;
       }
     }
-    .page-content {
-      padding: 20px;
-      font-size: 14px;
-    }
-    .article-wrapper {
-      margin: 0px;
-      padding: 10px;
-    }
-    .team-content {
-      padding: 30px 10px;
-    }
-    .team-img {
-      text-align: center;
-      padding: 0px;
-      margin-bottom: 30px;
-    }
   }
-}
-
-
-@media only screen and (max-width: 768px) {
+  
   .body-home {
     background-position: top center;
     background-size: cover;
@@ -43,22 +31,11 @@
 
   .body-about {
     .banner-wrapper {
-      padding-top: 80px!important;
+      padding-top: 80px;
     }
   }
-
-  // nav
-  .navbar {
-    .navbar-header {
-      height: 66px;
-      .navbar-toggle {
-        padding: 16px 10px;
-      }
-    }
-    ul.navbar-nav {
-      li {
-        padding: 0px;
-      }
-    }
+  
+  .container {
+    padding-top: 65px!important;
   }
 }

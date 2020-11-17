@@ -5,7 +5,6 @@
 @mainBackground: #e9feff;
 @navOpacity: #e9feff7d;
 @whiteOpacity: #ffffff94;
-@whiteOpacity2: #ffffff94;
 @gray: #ececec;
 @darkGray: #535353;
 @lightGray: #959595;
@@ -34,9 +33,6 @@
     background-repeat: no-repeat;
     background-size: contain;
     overflow: hidden;
-    .navbar {
-        background-image: none;
-    }
 }
 
 .body-about {
@@ -45,28 +41,26 @@
         background-color: @whiteOpacity;
         border-radius: 0px;
         margin-bottom: 0px;
-        // background-image: url(./assets/images/home-bg.jpg);
-        // background-position: cover;
-        // background-repeat: no-repeat;
-        // background-size: 71%;
-        // background-attachment: fixed;
-        // background-origin: initial;
+        background-image: url(./assets/images/home-bg.jpg);
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: 770px;
     }
     .container {
         width: 100%;
         margin: 0px;
         padding: 0px;
         .banner-wrapper {
-        padding: 90px;
-        background: @baseDarker;
-        background-image: url(./assets/images/banner-about.jpg);
-        background-position: center right;
-        background-repeat: no-repeat;
-        background-size: cover;
+            padding: 90px;
+            background: @baseDarker;
+            background-image: url(./assets/images/banner-about.jpg);
+            background-position: center right;
+            background-repeat: no-repeat;
+            background-size: cover;
             .banner {
                 text-align: center;
                 h2 {
-                font-size: 40px;
+                    font-size: 40px;
                 }
             }
         }
