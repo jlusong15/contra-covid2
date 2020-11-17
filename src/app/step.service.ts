@@ -52,5 +52,7 @@ export class StepService {
 
   reset(status) {
     this.resetForm = status
+    this.step1.next([])
+    this.step2.next([])
   }
 }

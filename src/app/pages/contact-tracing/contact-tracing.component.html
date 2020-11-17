@@ -30,14 +30,11 @@
       <div *ngIf="currentStep === 4">
         <app-success-notif></app-success-notif>
       </div>
-      {{ currentStep }}
-      {{ step1 | json}}
-      {{isInvalid}}
   </div>
 <div class='action-button'>
     <button type="button" class="btn btn-lg btn-primary" (click)="handleBackClick()" *ngIf = "currentStep < 4 && currentStep > 1" >Back</button>
     <button type="button" class="btn btn-lg btn-primary" (click)="handleNextClick()" *ngIf = "currentStep < 4"  [disabled]="isInvalid">Next</button>
-    <button type="button" class="btn btn-lg btn-primary" (click)="goBackHome()" *ngIf = "currentStep == 4" routerLink="">Home</button>
+    <button type="button" class="btn btn-lg btn-primary" (click)="handleReset()" *ngIf = "currentStep == 4" routerLink="">Home</button>
   </div>
 </div>
 

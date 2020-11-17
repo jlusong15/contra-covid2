@@ -16,10 +16,10 @@ export class ContactDetailsComponent implements OnInit {
   
   createFormGroup(data:any) {
     return this.fb.group({
-      fullName: [data?data.fullName:'', Validators.required],
-      email: [data?data.email:'', [Validators.required, Validators.email]],
-      contactNumber: [data?data.contactNumber:'', Validators.required],
-      address: [data?data.address:'', Validators.required],
+      fullName: [data && data.fullName ? data.fullName:'', Validators.required],
+      email: [data && data.email ? data.email:'', [Validators.required, Validators.email]],
+      contactNumber: [data && data.contactNumber ?data.contactNumber:'', Validators.required],
+      address: [data && data.address ? data.address:'', Validators.required],
     });
   }
 
@@ -44,8 +44,6 @@ export class ContactDetailsComponent implements OnInit {
     }
     if (this.step.resetForm) {
       this.step1Form.reset()
-      console.log("this.step1Form.value", this.step1Form.value)
-      this.step.updateStep1(this.step1Form.value)
       this.step.reset(false)
     }
     // if()

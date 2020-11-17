@@ -21,13 +21,13 @@ export class ContactTracingComponent implements OnInit {
   }
 
   handleNextClick() {
-    console.log("this.currentStep", this.currentStep)
-    console.log("this.step1Invalid", this.step.step1Invalid)
-    console.log("this.step1Invalid", this.step.step2Invalid)
-    if ((this.currentStep == 1 && !this.step.step1Invalid) || (this.currentStep == 2 && !this.step.step2Invalid)) {
+    if (this.currentStep < 3 && ((this.currentStep == 1 && !this.step.step1Invalid) || (this.currentStep == 2 && !this.step.step2Invalid))) {
       this.step.getCurrentStep.subscribe(step => this.currentStep = step)
       this.currentStep = this.currentStep + 1
-      console.log("next", this.currentStep);
+      this.step.updateCurrentStep(this.currentStep)
+    } else if (this.currentStep > 2) {
+      this.step.getCurrentStep.subscribe(step => this.currentStep = step)
+      this.currentStep = this.currentStep + 1
       this.step.updateCurrentStep(this.currentStep)
     }
   }
@@ -35,19 +35,14 @@ export class ContactTracingComponent implements OnInit {
   handleBackClick() {
     this.step.getCurrentStep.subscribe(step => this.currentStep = step)
     this.currentStep = this.currentStep - 1
-    console.log("back", this.currentStep);
     this.step.updateCurrentStep(this.currentStep)
   }
 
   handleReset() {
-    console.log("reset")
     this.step.reset(true)
     this.step.updateCurrentStep(1)
   }
 
-  goBackHome() {
-    console.log("home")
-  }
 
   ngOnInit(): void {
     this.currentStep = 1
