@@ -24,12 +24,7 @@ export class ContactDetailsComponent implements OnInit {
     });
   }
 
-  handleCheckValid() {
-    console.log('asdasd')
-  }
-
   ngOnInit(): void {
-    console.log(this.step1)
     this.step.getStep1.subscribe(data => {
       this.step1Form = this.createFormGroup(data)
     })

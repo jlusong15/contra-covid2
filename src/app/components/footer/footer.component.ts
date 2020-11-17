@@ -21,7 +21,6 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.isPageHome()
-    console.log("this.Home", this.isHome)
   }
 
 }

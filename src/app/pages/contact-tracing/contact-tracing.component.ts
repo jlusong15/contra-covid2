@@ -16,10 +16,6 @@ export class ContactTracingComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private step : StepService) { }
 
-  handleCheckValid(isValid) {
-    console.log('handleCheckValid', isValid)
-  }
-
   handleNextClick() {
     if (this.currentStep < 3 && ((this.currentStep == 1 && !this.step.step1Invalid) || (this.currentStep == 2 && !this.step.step2Invalid))) {
       this.step.getCurrentStep.subscribe(step => this.currentStep = step)

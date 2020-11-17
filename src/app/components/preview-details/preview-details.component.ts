@@ -34,7 +34,6 @@ export class PreviewDetailsComponent implements OnInit {
     this.step.getStep2.subscribe((data:any) => {
       this.allData.step2 = data
     })
-    console.log("allData", this.allData)
   }
 
 }
