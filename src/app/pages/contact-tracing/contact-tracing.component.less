@@ -1,0 +1,124 @@
+@import "../../app.global.less";
+
+.body-contactTracing {
+  .jl-stepper {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    text-align: center;
+    .stepper {
+      border: 0;
+      background: none;
+      border-radius: 100%;
+      box-shadow: none;
+      padding: 11px;
+      height: 30px;
+      line-height: 11px;
+      font-size: 18px;
+      color: @stepperGray;
+      padding: 0;
+      &:focus {
+        outline: 0;
+      }
+      &:active {
+        box-shadow: none;
+      }
+      &:focus:active {
+        outline: 0;
+      }
+      &:hover {
+        color: @darkGray;
+        .stepper-number {
+          background-color: @darkGray;
+        }
+      }
+      &.active {
+        box-shadow: none;
+        color: @base;
+        .stepper-number {
+          padding: 0;
+          background-color: @base;
+          color: @white;
+          width: 30px;
+          height: 30px;
+          display: inline-grid;
+          align-items: center;
+          border-radius: 100%;
+        }
+      }
+    
+      .stepper-number {
+        padding: 0;
+        background-color: @ligherGray;
+        color: @white;
+        width: 30px;
+        height: 30px;
+        display: inline-grid;
+        align-items: center;
+        border-radius: 100%;
+      }
+    }
+    
+    .stepper-line {
+      width: 100px;
+      display: inline-block;
+      border: 1px solid @ligherGray;
+      margin: 0 11px;
+    }
+    
+  }
+  
+  .error {
+    color: @error;
+  } 
+  
+  .fieldError {
+    border-color: @error;
+  }
+  
+  .contactTracingForm {
+    margin-bottom: 40px;
+    .btn-reset {
+      margin-top: -12px;
+    }
+  }
+  
+  .action-button {
+    text-align: center;
+    margin-bottom: 50px;
+    button {
+      background: @base;
+      border: 0;
+      &:hover {
+        background:@baseDarker
+      }
+    }
+    .next-button {
+      background: @base;
+      border: 0;
+    }
+  }
+  .contactDetails {
+    .thank-you {
+      text-align: center;
+    }
+  }
+  .full-width {
+    width:100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .body-contactTracing {
+    .innerpage-container {
+      padding-top: 35px;
+      .jl-stepper {
+        .stepper {
+          font-size: 11px!important;
+        }
+        .stepper-line {
+          width: 40px!important;
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ContraCovidComponent } from './contra-covid/contra-covid.component';
-import { AboutComponent } from './about/about.component';
+import { ContactTracingComponent } from './pages/contact-tracing/contact-tracing.component';
+import { AboutComponent } from './pages/about/about.component';
 
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
-  { path: 'contra-covid', component: ContraCovidComponent },
+  { path: 'contact-tracing', component: ContactTracingComponent },
 ];
 
 @NgModule({
