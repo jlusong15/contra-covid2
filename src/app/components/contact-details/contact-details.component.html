@@ -5,7 +5,7 @@
         <input id="fullName" name="fullName" class="form-control" 
             formControlName="fullName"
             [ngClass]="{'is-invalid' : step1Form.get('fullName').touched && step1Form.get('fullName').invalid}"
-            placeholder="FullName"
+            placeholder="Full Name"
         >
         <small class="form-text text-muted error" *ngIf="step1Form.get('fullName').touched && step1Form.get('fullName').errors && step1Form.get('fullName').errors.required">This field is required.</small>
         </div>

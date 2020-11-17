@@ -17,13 +17,14 @@
       </div>
 
       <div *ngIf="currentStep === 2">
-        <!-- <app-health-status></app-contact-details> -->
+        <app-health-status></app-health-status>
       </div>
       {{ currentStep }}
       {{ step1 | json}}
+      {{isInvalid}}
   </div>
   <div class='action-button'>
     <button type="button" class="btn btn-lg btn-primary" (click)="handleBackClick()">Back</button>
-    <button type="button" class="btn btn-lg btn-primary" (click)="handleNextClick()" [disabled]="isInvalid">>Next</button>
+    <button type="button" class="btn btn-lg btn-primary" (click)="handleNextClick()" [disabled]="isInvalid">Next</button>
   </div>
 </div>

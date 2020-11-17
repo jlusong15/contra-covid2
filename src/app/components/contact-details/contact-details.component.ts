@@ -7,17 +7,13 @@ import { StepService } from '../../step.service';
   styleUrls: ['./contact-details.component.less']
 })
 export class ContactDetailsComponent implements OnInit {
-
   step1 = {}
-  
   currentStep = 1
-
   isInvalid = false
-
-  constructor(private fb: FormBuilder, private step: StepService) { }
-
   step1Form = this.fb.group({ });
 
+  constructor(private fb: FormBuilder, private step: StepService) { }
+  
   createFormGroup(data:any) {
     return this.fb.group({
       fullName: [data?data.fullName:'', Validators.required],
@@ -32,9 +28,6 @@ export class ContactDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.currentStep = 1
-    // console.log(this.step1Form.valid)
-    // this.step.getStep1.subscribe(data => this.step1 = data)
     console.log(this.step1)
     this.step.getStep1.subscribe(data => {
       this.step1Form = this.createFormGroup(data)
