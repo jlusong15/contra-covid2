@@ -37,9 +37,18 @@ export class ContactDetailsComponent implements OnInit {
   }
 
   ngDoCheck() {
-    console.log('ngDoCheck', this.step1Form.value)
-    this.step.updateStep1(this.step1Form.value)
-    // this.isInvalid = !this.step1Form.valid
+    this.isInvalid = !this.step1Form.valid
+    this.step.updateStep1ValidStat(this.isInvalid)
+    if (!this.isInvalid) {
+      this.step.updateStep1(this.step1Form.value)
+    }
+    if (this.step.resetForm) {
+      this.step1Form.reset()
+      console.log("this.step1Form.value", this.step1Form.value)
+      this.step.updateStep1(this.step1Form.value)
+      this.step.reset(false)
+    }
+    // if()
   }
 
 }

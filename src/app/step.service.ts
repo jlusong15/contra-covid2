@@ -7,6 +7,9 @@ import { BehaviorSubject } from 'rxjs';
 export class StepService {
   private currentStep  = new BehaviorSubject<number>(1)
   public getCurrentStep = this.currentStep.asObservable();
+  public step1Invalid = true
+  public step2Invalid = true
+  public resetForm = false
 
   private step1  = new BehaviorSubject<object>({
     fullName: '',
@@ -27,6 +30,14 @@ export class StepService {
 
   constructor() { }
 
+  updateStep1ValidStat(status) {
+    this.step1Invalid = status
+  }
+
+  updateStep2ValidStat(status) {
+    this.step2Invalid = status
+  }
+
   updateStep1(step1) {
     this.step1.next(step1)
   }
@@ -37,5 +48,9 @@ export class StepService {
 
   updateCurrentStep(step){
     this.currentStep.next(step)
+  }
+
+  reset(status) {
+    this.resetForm = status
   }
 }

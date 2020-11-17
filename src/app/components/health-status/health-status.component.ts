@@ -19,10 +19,10 @@ export class HealthStatusComponent implements OnInit {
   createFormGroup(data:any) {
     return this.fb.group({
       temperature: [data?data.temperature:'', Validators.required],
-      feeling: [data?data.feeling:'', [Validators.required, Validators.email]],
-      hasCough: [data?data.hasCough:'', Validators.required],
-      hasCovidContact: [data?data.hasCovidContact:'', Validators.required],
-      additionalInfo: [data?data.additionalInfo:'', Validators.required],
+      feeling: [data?data.feeling:''],
+      hasCough: [data?data.hasCough:''],
+      hasCovidContact: [data?data.hasCovidContact:''],
+      additionalInfo: [data?data.additionalInfo:''],
     });
   }
 
@@ -30,20 +30,31 @@ export class HealthStatusComponent implements OnInit {
     console.log('asdasd')
   }
 
+  handleReset() {
+    console.log("rese2")
+    // this.step1Form.reset();
+    this.step.updateCurrentStep(1)
+  }
+
   ngOnInit(): void {
     console.log(this.step2)
     this.step.getStep2.subscribe(data => {
       this.step2Form = this.createFormGroup(data)
     })
-    // console.log(this.step.getCurrentStep)
-    // this.isInvalid = !this.step2Form.valid
   }
 
   ngDoCheck() {
-    console.log('ngDoCheck', this.step2Form.value)
-    this.step.updateStep2(this.step2Form.value)
-    // this.step.updateCurrentStep(this.step2Form.valid ? this.currentStep + 1 : this.currentStep)
-    // this.isInvalid = !this.step2Form.valid
+    this.isInvalid = !this.step2Form.valid
+    this.step.updateStep2ValidStat(this.isInvalid)
+    console.log("this.isInvalid", this.isInvalid)
+    if (!this.isInvalid) {
+      this.step.updateStep2(this.step2Form.value)
+    }
+    if (this.step.resetForm) {
+      this.step2Form.reset()
+      this.step.updateStep2(this.step2Form.value)
+      this.step.updateCurrentStep(1)
+    }
   }
 
 }

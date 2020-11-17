@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { StepService } from '../../step.service'
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-contact-tracing',
@@ -22,10 +21,15 @@ export class ContactTracingComponent implements OnInit {
   }
 
   handleNextClick() {
-    this.step.getCurrentStep.subscribe(step => this.currentStep = step)
-    this.currentStep = this.currentStep + 1
-    console.log("next", this.currentStep);
-    this.step.updateCurrentStep(this.currentStep)
+    console.log("this.currentStep", this.currentStep)
+    console.log("this.step1Invalid", this.step.step1Invalid)
+    console.log("this.step1Invalid", this.step.step2Invalid)
+    if ((this.currentStep == 1 && !this.step.step1Invalid) || (this.currentStep == 2 && !this.step.step2Invalid)) {
+      this.step.getCurrentStep.subscribe(step => this.currentStep = step)
+      this.currentStep = this.currentStep + 1
+      console.log("next", this.currentStep);
+      this.step.updateCurrentStep(this.currentStep)
+    }
   }
 
   handleBackClick() {
@@ -37,6 +41,7 @@ export class ContactTracingComponent implements OnInit {
 
   handleReset() {
     console.log("reset")
+    this.step.reset(true)
     this.step.updateCurrentStep(1)
   }
 

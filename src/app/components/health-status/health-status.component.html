@@ -4,10 +4,10 @@
       <label for="exampleInputEmail1">Temperature in Celsius (°C) *</label>
       <input class="form-control"
         formControlName="temperature"
-        [ngClass]="{'is-invalid' : step2Form.get('temperature').touched && step2Form.get('temperature').invalid}"
+        [ngClass]="{'is-invalid' : step2Form.get('temperature').touched && step2Form.get('temperature').status == 'INVALID'}"
         type="number" name="temperature"
         >
-      <small class="form-text text-muted error" *ngIf="step2Form.get('temperature').touched && step2Form.get('temperature').invalid">This field is required.</small>
+      <small class="form-text text-muted error" *ngIf="step2Form.get('temperature').touched && step2Form.get('temperature').status == 'INVALID'">This field is required.</small>
     </div>
 
     <div class="form-group form-group-lg">
@@ -33,7 +33,7 @@
         </label>
       </div>
       <br />
-      <small class="form-text text-muted error">This field is required.</small>
+      <!-- <small class="form-text text-muted error">This field is required.</small> -->
     </div>
 
     <div class="form-group form-group-lg">
@@ -51,11 +51,11 @@
         </label>
       </div>
       <br />
-      <small class="form-text text-muted error">This field is required.</small>
+      <!-- <small class="form-text text-muted error">This field is required.</small> -->
     </div>
 
     <div class="form-group form-group-lg">
-      <label for="exampleInputEmail1" class="col-md-12 p-0">Have you been in contact with any CoVid? *</label>
+      <label for="exampleInputEmail1" class="col-md-12 p-0">Have you been in contact with any CoVid?</label>
       <div class="radio-inline">
         <label>
         <!-- (change)="handleCovidContactChange()" -->
@@ -74,12 +74,11 @@
       </div>
       <input class="form-control"
         *ngIf="isAdditionalInfoShow"
-        [ngClass]="{'is-invalid' : step2Form.get('additionalInfo').touched && step2Form.get('additionalInfo').invalid}"
         type="text" name="additionalInfo"
         formControlName="additionalInfo"
         placeholder="If yes, input the details of that person: * ">
-      <small class="form-text text-muted error"
-        *ngIf="step2Form.get('additionalInfo').touched && step2Form.get('additionalInfo').invalid">This is a required field</small>
+      <!-- <small class="form-text text-muted error"
+        *ngIf="step2Form.get('isAdditionalInfoShow').touched && step2Form.get('isAdditionalInfoShow').status == 'INVALID'">This is a required field</small> -->
     </div>
   </form>
 </div>
