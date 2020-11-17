@@ -22,7 +22,7 @@ export class ContactTracingComponent implements OnInit {
 
   handleNextClick() {
     this.step.getCurrentStep.subscribe(step => this.currentStep = step)
-    // this.currentStep = this.currentStep + 1
+    this.currentStep = this.currentStep + 1
     console.log("next", this.currentStep);
     this.step.updateCurrentStep(this.currentStep)
   }
@@ -32,7 +32,6 @@ export class ContactTracingComponent implements OnInit {
     this.currentStep = this.currentStep - 1
     console.log("back", this.currentStep);
     this.step.updateCurrentStep(this.currentStep)
-    // console.log(this.currentStep);
   }
 
   ngOnInit(): void {

@@ -39,7 +39,6 @@ export class ContactDetailsComponent implements OnInit {
   ngDoCheck() {
     console.log('ngDoCheck', this.step1Form.value)
     this.step.updateStep1(this.step1Form.value)
-    this.step.updateCurrentStep(this.step1Form.valid ? this.currentStep + 1 : this.currentStep)
     // this.isInvalid = !this.step1Form.valid
   }
 
