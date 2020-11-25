@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
+  title: string = "contra-covid2"
   currentPath: string = "";
   
   constructor(

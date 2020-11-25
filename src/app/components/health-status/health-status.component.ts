@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { StepService } from '../../step.service';
 
 @Component({

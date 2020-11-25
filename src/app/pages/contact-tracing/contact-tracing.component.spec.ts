@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactTracingComponent } from './contact-tracing.component';
 
 describe('ContactTracingComponent', () => {
@@ -8,6 +8,7 @@ describe('ContactTracingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports : [ FormsModule, ReactiveFormsModule ],
       declarations: [ ContactTracingComponent ]
     })
     .compileComponents();
