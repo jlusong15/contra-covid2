@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StepService } from '../../step.service';
+import { StepService } from '../../services/step.service'
 
 @Component({
   selector: 'app-preview-details',

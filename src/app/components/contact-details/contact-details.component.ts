@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { StepService } from '../../step.service';
+import { StepService } from '../../services/step.service';
 @Component({
   selector: 'app-contact-details',
   templateUrl: './contact-details.component.html',

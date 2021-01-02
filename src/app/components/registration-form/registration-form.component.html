@@ -1,0 +1,34 @@
+<form name="form" [formGroup]="regListForm">
+    <div class="my-info">
+        <h4>Enter your details:</h4>
+        <span class="col-md-12 row">
+            <span class="col-md-2">Full name:</span> <span class="col-md-1"><input id="fullname" formControlName="fullname"></span>
+        </span> 
+        <span class="col-md-12 row">
+            <span class="col-md-2">Email:</span> <span class="col-md-1"><input id="email" formControlName="email"></span>
+        </span> 
+    </div>
+
+    <div class="family-list">
+        <h4>Enter family details:</h4>
+        <span class="col-md-12 row">
+            <input class="col-md-3" id="newInput" formControlName="newInput">
+            <button id = "addFamily" style = "margin-left: 5px" (click)="addToList()" *ngIf="!isEditMode">Add</button>
+            <button id = "editFamily" style = "margin-left: 5px" (click)="updateItem()" *ngIf="isEditMode">Update</button>
+            <button id = "editFamily" style = "margin-left: 5px" (click)="cancelUpdate()" *ngIf="isEditMode">Cancel</button>
+        </span>
+        <span class="col-md-12 row" id="familyList">
+            <ul>
+                <li *ngFor = "let item of familyList; let i = index;" [ngClass]="{'on-edit' : item.isEdit }">
+                    <span>{{ item.name }}</span>
+                    <button class="edit" (click)="editFromList(item, i)">Edit</button>
+                    <button class="delete" (click)="removeFromList(item, i)" >Delete</button>
+                </li>
+            </ul>
+        </span>
+    </div>
+
+    <div class="submit-form">
+        <button class="submitList" (click)="submitList()">Submit</button>
+    </div>
+</form>
