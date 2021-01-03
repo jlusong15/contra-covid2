@@ -1,34 +1,47 @@
-<form name="form" [formGroup]="regListForm">
+<form name="form" [formGroup]="regListForm" class="registration-form">
     <div class="my-info">
         <h4>Enter your details:</h4>
-        <span class="col-md-12 row">
-            <span class="col-md-2">Full name:</span> <span class="col-md-1"><input id="fullname" formControlName="fullname"></span>
-        </span> 
-        <span class="col-md-12 row">
-            <span class="col-md-2">Email:</span> <span class="col-md-1"><input id="email" formControlName="email"></span>
-        </span> 
+        <div class="col-md-12 row">
+            <span class="col-md-12">Full name:</span>
+            <span class="col-md-12">
+                <input class="form-control"  id="fullname" formControlName="fullname">
+                <small class="form-text text-muted error" *ngIf="regListForm.get('fullname').touched && regListForm.get('fullname').status == 'INVALID'">Invalid value</small>
+            </span>
+        </div> 
+        <div class="clear-both"><br /></div>
+        <div class="col-md-12 row">
+            <span class="col-md-12">Email:</span>
+            <span class="col-md-12">
+                <input class="form-control" id="email" formControlName="email">
+                <small class="form-text text-muted error" *ngIf="regListForm.get('email').touched && regListForm.get('email').status == 'INVALID'">Invalid value</small>
+            </span>
+        </div> 
     </div>
+    
+    <div class="clear-both"> </div>
 
     <div class="family-list">
-        <h4>Enter family details:</h4>
-        <span class="col-md-12 row">
-            <input class="col-md-3" id="newInput" formControlName="newInput">
-            <button id = "addFamily" style = "margin-left: 5px" (click)="addToList()" *ngIf="!isEditMode">Add</button>
-            <button id = "editFamily" style = "margin-left: 5px" (click)="updateItem()" *ngIf="isEditMode">Update</button>
-            <button id = "editFamily" style = "margin-left: 5px" (click)="cancelUpdate()" *ngIf="isEditMode">Cancel</button>
-        </span>
-        <span class="col-md-12 row" id="familyList">
-            <ul>
-                <li *ngFor = "let item of familyList; let i = index;" [ngClass]="{'on-edit' : item.isEdit }">
-                    <span>{{ item.name }}</span>
-                    <button class="edit" (click)="editFromList(item, i)">Edit</button>
-                    <button class="delete" (click)="removeFromList(item, i)" >Delete</button>
-                </li>
-            </ul>
-        </span>
-    </div>
-
-    <div class="submit-form">
-        <button class="submitList" (click)="submitList()">Submit</button>
+        <h5>Enter family details:</h5>
+        <div class="col-md-12 row">
+            <div class="col-md-3">
+                <input id="newInput" class="form-control new-input" formControlName="newInput">
+            </div>
+            <div class="col-md-3 p-0">
+                <button id = "addFamily" class="btn btn-sm btn-info" style = "margin-left: 5px" (click)="addToList()" *ngIf="!isEditMode">Add</button>
+                <button id = "editFamily" class="btn btn-sm btn-info" style = "margin-left: 5px" (click)="updateItem()" *ngIf="isEditMode">Update</button>
+                <button id = "editFamily" class="btn btn-sm btn-info" style = "margin-left: 5px" (click)="cancelUpdate()" *ngIf="isEditMode">Cancel</button>
+            </div>
+        </div>
+        <div class="col-md-12 row" id="familyList">
+            <div class="col-md-12">
+                <ul>
+                    <li *ngFor = "let item of familyList; let i = index;" [ngClass]="{'on-edit' : item.isEdit }">
+                        <span>{{ item.name }}</span>
+                        <button class="edit btn btn-sm" (click)="editFromList(item, i)" [ngClass]="{'disabled' : isEditMode}">Edit</button>
+                        <button class="delete btn btn-sm" (click)="removeFromList(item, i)" [ngClass]="{'disabled' : isEditMode}" >Delete</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </form>

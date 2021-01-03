@@ -14,13 +14,7 @@ export class RegistrationFormComponent implements OnInit {
   isEditMode = false;
   activeIndex = -1;
 
-  constructor(private fBuilder: FormBuilder, private rList : RegisterService) {
-    this.regListForm = new FormGroup({
-      fullname: new FormControl(),
-      email: new FormControl(),
-      newInput: new FormControl()
-    });
-  }
+  constructor(private fBuilder: FormBuilder, private rList : RegisterService) { }
 
   addToList() {
     let val = this.regListForm.get('newInput').value.trim()
@@ -40,15 +34,20 @@ export class RegistrationFormComponent implements OnInit {
     this.updateInputValue();
   }
 
-  removeFromList(item, index){    
+  removeFromList(item, index){
+    if (this.isEditMode) {
+      return false
+    }
     this.familyList.splice(index, 1)
-    console.log(this.familyList)
+    // console.log(this.familyList)
   }
 
   editFromList(item, index){
+    if (this.isEditMode) {
+      return false
+    }
     console.log(item, index)
     this.updateEditMode(true, index);
-  
     this.activeIndex = index;
     this.updateInputValue(item.name)
   }
@@ -64,10 +63,10 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   createFormGroup(data:any) {
-    return this.fBuilder.group({
-      fullname: [data && data.fullname || '', Validators.required],
-      email: [data && data.email || '', Validators.email && Validators.required],
-      newInput: [data && data.newInput || '', Validators.required]
+    return this.regListForm = new FormGroup({
+      fullname: new FormControl(null, [Validators.required]),
+      email: new FormControl('test', [Validators.required, Validators.email]),
+      newInput: new FormControl()
     });
   }
 
@@ -78,12 +77,20 @@ export class RegistrationFormComponent implements OnInit {
     }
   }
 
-  submitList() {
-    console.log("this.familyList", this.familyList)
-  }
-
   ngOnInit(): void {
     // console.log("this.rList.getProfileForm",this.rList.getProfileForm)
+  }
+
+  ngDoCheck() : void {
+    console.log("test",this.regListForm)
+    if (this.regListForm.status === "VALID") {
+      this.rList.updateProfile(this.regListForm.value)
+      this.rList.updateRegList(this.familyList)
+    } else {
+      this.rList.updateProfile({})
+      this.rList.updateRegList([])
+    }
+    
   }
 
 }

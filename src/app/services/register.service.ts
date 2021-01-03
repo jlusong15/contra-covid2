@@ -18,8 +18,11 @@ export class RegisterService {
 
   constructor() { }
 
+  updateProfile(data){
+    this.profileForm.next(data)
+  }
+
   updateRegList(data){
-    console.log("data", data)
     this.registerList.next(data)
   }
 }
