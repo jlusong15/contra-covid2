@@ -10,44 +10,12 @@ import { RegisterService } from '../../services/register.service';
 export class RegisterComponent implements OnInit {
 
   currentStep = 1;
-  profileForm = {}
-  getRegisterList = []
-  alert = {
-    message : '',
-    button : 'OK'
-  }
 
   constructor(private rList : RegisterService) {};
 
-  submitList() {
-    console.log("this.rList.getProfileForm", this.profileForm)
-    console.log("this.rList.getRegisterList", this.getRegisterList)
-    if (this.getRegisterList.length === 0) {
-      this.showError();
-    } else {
-      this.showSuccess();
-    }
-  }
-
-  showError(){
-    this.alert = {
-      message: 'Error values',
-      button: 'OK'
-    }
-  }
-
-  showSuccess(){
-    this.alert = {
-      message: 'Success',
-      button: 'OK'
-    }
-  }
-
   ngOnInit(): void {
-    this.rList.getProfileForm.subscribe(data => this.profileForm = data)
-    this.rList.getRegisterList.subscribe(data => this.getRegisterList = data)
-
-    // console.log("this.rList.getProfileForm",this.rList.getProfileForm)
+    // this.rList.getProfileForm.subscribe(data => this.profileForm = data)
+    // this.rList.getRegisterList.subscribe(data => this.getRegisterList = data)
   }
 
 }

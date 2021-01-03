@@ -61,7 +61,6 @@ export class HealthStatusComponent implements OnInit {
     this.isInvalid = !this.step2Form.valid
     this.step.updateStep2ValidStat(this.isInvalid)
     if (!this.isInvalid) {
-      console.log(this.step2Form.value)
       this.step.updateStep2(this.step2Form.value)
     }
     if (this.step.resetForm) {

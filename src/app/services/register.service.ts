@@ -6,11 +6,12 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class RegisterService {
-  private profileForm  = new BehaviorSubject<object>({
+  default = {
     fullname: '',
     email: '',
     newInput: ''
-  })
+  }
+  private profileForm  = new BehaviorSubject<object>(this.default)
   public getProfileForm = this.profileForm.asObservable();
 
   private registerList  = new BehaviorSubject<Array<any>>([]);
@@ -24,5 +25,10 @@ export class RegisterService {
 
   updateRegList(data){
     this.registerList.next(data)
+  }
+
+  reset(){
+    this.profileForm.next(this.default)
+    this.registerList.next([])
   }
 }
