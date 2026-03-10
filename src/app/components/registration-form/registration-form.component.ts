@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormGroup, UntypedFormBuilder, FormControl, Validators } from '@angular/forms';
 import { RegisterService } from '../../services/register.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { RegisterService } from '../../services/register.service';
   styleUrls: ['./registration-form.component.less']
 })
 export class RegistrationFormComponent implements OnInit {
-  
+
   familyList = [];
   regListForm = this.createFormGroup({});
   isEditMode = false;
@@ -19,7 +19,7 @@ export class RegistrationFormComponent implements OnInit {
     button : 'OK'
   }
 
-  constructor(private fBuilder: FormBuilder, private rList : RegisterService) { }
+  constructor(private fBuilder: UntypedFormBuilder, private rList : RegisterService) { }
 
   addToList() {
     let val = (this.regListForm.get('newInput').value) ? this.regListForm.get('newInput').value.trim() : null;
@@ -113,7 +113,7 @@ export class RegistrationFormComponent implements OnInit {
   ngDoCheck() : void {
     this.rList.updateProfile(this.regListForm.value)
     this.rList.updateRegList(this.familyList)
-    
+
   }
 
 }

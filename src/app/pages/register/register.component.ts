@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormGroup, UntypedFormBuilder, FormControl, Validators } from '@angular/forms';
 import { RegisterService } from '../../services/register.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.less']
+  // styleUrls: ['./register.component.less']
 })
 export class RegisterComponent implements OnInit {
 
