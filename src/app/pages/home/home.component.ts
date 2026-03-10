@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.less']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.less'],
+    standalone: false
 })
 export class HomeComponent implements OnInit {
   bannerTitle: string = "";
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
     this.bannerDetails = [
       "ConTra means Contact Tracing.",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a augue neque. Integer ullamcorper tempor tempor. Aenean blandit.",
-      "To view a sample form using AngularJS, click the button."
+      "To view a sample form using Angular, click the button."
     ];
   }
 

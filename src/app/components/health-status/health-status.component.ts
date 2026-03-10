@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { StepService } from '../../step.service';
 
 @Component({
-  selector: 'app-health-status',
-  templateUrl: './health-status.component.html',
-  styleUrls: ['./health-status.component.less']
+    selector: 'app-health-status',
+    templateUrl: './health-status.component.html',
+    styleUrls: ['./health-status.component.less'],
+    standalone: false
 })
 export class HealthStatusComponent implements OnInit {
   step2 = {}
@@ -15,7 +16,7 @@ export class HealthStatusComponent implements OnInit {
   step2Form = this.fb.group({ });
   isAdditionalInfoShow = false
 
-  constructor(private fb: FormBuilder, private step: StepService) { }
+  constructor(private fb: UntypedFormBuilder, private step: StepService) { }
   
   createFormGroup(data:any) {
     return this.fb.group({

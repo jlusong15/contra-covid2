@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { StepService } from '../../step.service';
 @Component({
-  selector: 'app-contact-details',
-  templateUrl: './contact-details.component.html',
-  styleUrls: ['./contact-details.component.less']
+    selector: 'app-contact-details',
+    templateUrl: './contact-details.component.html',
+    styleUrls: ['./contact-details.component.less'],
+    standalone: false
 })
 export class ContactDetailsComponent implements OnInit {
   step1 = {}
@@ -13,7 +14,7 @@ export class ContactDetailsComponent implements OnInit {
   isInvalid = false
   step1Form = this.FormBuilder.group({ });
 
-  constructor(private FormBuilder: FormBuilder, private step: StepService) {
+  constructor(private FormBuilder: UntypedFormBuilder, private step: StepService) {
     this.step1Form = this.FormBuilder.group({ });
   }
   
