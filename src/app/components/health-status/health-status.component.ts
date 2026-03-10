@@ -3,9 +3,10 @@ import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { StepService } from '../../step.service';
 
 @Component({
-  selector: 'app-health-status',
-  templateUrl: './health-status.component.html',
-  styleUrls: ['./health-status.component.less']
+    selector: 'app-health-status',
+    templateUrl: './health-status.component.html',
+    styleUrls: ['./health-status.component.less'],
+    standalone: false
 })
 export class HealthStatusComponent implements OnInit {
   step2 = {}

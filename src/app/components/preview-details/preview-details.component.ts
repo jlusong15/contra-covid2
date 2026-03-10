@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { StepService } from '../../step.service';
 
 @Component({
-  selector: 'app-preview-details',
-  templateUrl: './preview-details.component.html',
-  styleUrls: ['./preview-details.component.less']
+    selector: 'app-preview-details',
+    templateUrl: './preview-details.component.html',
+    styleUrls: ['./preview-details.component.less'],
+    standalone: false
 })
 export class PreviewDetailsComponent implements OnInit {
   step1 = {

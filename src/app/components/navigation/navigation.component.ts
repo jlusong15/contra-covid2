@@ -3,9 +3,10 @@ import { Router } from "@angular/router";
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.less']
+    selector: 'app-navigation',
+    templateUrl: './navigation.component.html',
+    styleUrls: ['./navigation.component.less'],
+    standalone: false
 })
 export class NavigationComponent implements OnInit {
   navList : object = [];

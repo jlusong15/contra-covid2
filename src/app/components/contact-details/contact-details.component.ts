@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { StepService } from '../../step.service';
 @Component({
-  selector: 'app-contact-details',
-  templateUrl: './contact-details.component.html',
-  styleUrls: ['./contact-details.component.less']
+    selector: 'app-contact-details',
+    templateUrl: './contact-details.component.html',
+    styleUrls: ['./contact-details.component.less'],
+    standalone: false
 })
 export class ContactDetailsComponent implements OnInit {
   step1 = {}

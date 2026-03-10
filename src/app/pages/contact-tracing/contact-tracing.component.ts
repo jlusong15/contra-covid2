@@ -3,9 +3,10 @@ import { FormGroup, UntypedFormBuilder, FormControl, Validators } from '@angular
 import { StepService } from '../../step.service'
 
 @Component({
-  selector: 'app-contact-tracing',
-  templateUrl: './contact-tracing.component.html',
-  styleUrls: ['./contact-tracing.component.less']
+    selector: 'app-contact-tracing',
+    templateUrl: './contact-tracing.component.html',
+    styleUrls: ['./contact-tracing.component.less'],
+    standalone: false
 })
 export class ContactTracingComponent implements OnInit {
 
