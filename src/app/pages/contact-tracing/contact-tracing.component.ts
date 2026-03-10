@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormGroup, UntypedFormBuilder, FormControl, Validators } from '@angular/forms';
 import { StepService } from '../../step.service'
 
 @Component({
@@ -14,7 +14,7 @@ export class ContactTracingComponent implements OnInit {
 
   isInvalid = false
 
-  constructor(private fb: FormBuilder, private step : StepService) { }
+  constructor(private fb: UntypedFormBuilder, private step : StepService) { }
 
   handleNextClick() {
     if (this.currentStep < 3 && ((this.currentStep == 1 && !this.step.step1Invalid) || (this.currentStep == 2 && !this.step.step2Invalid))) {
