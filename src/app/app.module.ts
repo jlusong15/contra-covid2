@@ -14,6 +14,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HealthStatusComponent } from './components/health-status/health-status.component';
 import { PreviewDetailsComponent } from './components/preview-details/preview-details.component';
 import { SuccessNotifComponent } from './components/success-notif/success-notif.component';
+import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +28,13 @@ import { SuccessNotifComponent } from './components/success-notif/success-notif.
     FooterComponent,
     HealthStatusComponent,
     PreviewDetailsComponent,
-    SuccessNotifComponent
+    SuccessNotifComponent,
+    RegistrationFormComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule
   ],

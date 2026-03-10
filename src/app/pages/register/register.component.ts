@@ -5,6 +5,7 @@ import { RegisterService } from '../../services/register.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
+  standalone: false
   // styleUrls: ['./register.component.less']
 })
 export class RegisterComponent implements OnInit {
