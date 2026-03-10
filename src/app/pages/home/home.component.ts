@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     this.bannerDetails = [
       "ConTra means Contact Tracing.",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a augue neque. Integer ullamcorper tempor tempor. Aenean blandit.",
-      "To view a sample form using AngularJS, click the button."
+      "To view a sample form using Angular, click the button."
     ];
   }
 
