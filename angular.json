@@ -71,18 +71,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "contra-covid2:build"
+            "buildTarget": "contra-covid2:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "contra-covid2:build:production"
+              "buildTarget": "contra-covid2:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "contra-covid2:build"
+            "buildTarget": "contra-covid2:build"
           }
         },
         "test": {
