@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HealthStatusComponent } from './components/health-status/health-status.component';
 import { PreviewDetailsComponent } from './components/preview-details/preview-details.component';
 import { SuccessNotifComponent } from './components/success-notif/success-notif.component';
+import { CounterComponent } from './components/counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +27,12 @@ import { SuccessNotifComponent } from './components/success-notif/success-notif.
     FooterComponent,
     HealthStatusComponent,
     PreviewDetailsComponent,
-    SuccessNotifComponent
+    SuccessNotifComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule
   ],

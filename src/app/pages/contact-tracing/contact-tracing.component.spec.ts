@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactTracingComponent } from './contact-tracing.component';
 
@@ -6,13 +6,13 @@ describe('ContactTracingComponent', () => {
   let component: ContactTracingComponent;
   let fixture: ComponentFixture<ContactTracingComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       imports : [ FormsModule, ReactiveFormsModule ],
       declarations: [ ContactTracingComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ContactTracingComponent);
