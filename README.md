@@ -3,6 +3,8 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12 initially.
 As of March 2026, this project is now upgrade to Angular v20
 
+Demo deployed on https://contra-covid2-git-master-jlusong15s-projects.vercel.app/
+
 ### Run the Application on Dev Server
 
 The simplest way to start the application is to:
