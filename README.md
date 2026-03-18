@@ -1,9 +1,12 @@
-# ContraCovid2 by Jennifer Bautista
+### ContraCovid2 by Jennifer Bautista
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12 initially.
-As of March 2026, this project is now upgrade to Angular v20
-
 Demo deployed on https://contra-covid2-git-master-jlusong15s-projects.vercel.app/
+
+### Updates
+- Year 2020: Design and development are done (so design my seem outdated)
+- Year 2020: This project was only Angular version 9
+- Year 2026: This project is now upgrade to Angular version 20
 
 ### Run the Application on Dev Server
 
