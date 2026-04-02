@@ -4,7 +4,7 @@
 @baseDarker: #2e458c;
 @mainBackground: #e9feff;
 @navOpacity: #e9feff7d;
-@whiteOpacity: #ffffff94;
+@whiteOpacity: #ffffffcc;
 @gray: #ececec;
 @darkGray: #535353;
 @lightGray: #959595;
@@ -35,23 +35,24 @@
 
 
 body {
-    font-family: Arial', Helvetica, sans-serif';
+    font-family: 'Arial';
     &.body-home {
         background-color: @mainBackground;
         background-image: url(./assets/images/home-bg.jpg);
-        background-position: center right;
+        background-position: top right;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
         overflow: hidden;
     }
 
     &.body-about, &.body-contract-tracing {
         background-color: @mainBackground;
         .navbar {
-            background-color: @whiteOpacity;
+            // background-color: @whiteOpacity;
+            background-color: white;
             border-radius: 0px;
             margin-bottom: 0px;
-            background-image: url(./assets/images/home-bg.jpg);
+            // background-image: url(./assets/images/home-bg.jpg);
             background-position: top right;
             background-repeat: no-repeat;
             background-size: 770px;
@@ -86,13 +87,13 @@ body {
                 padding: 8px;
                 cursor: pointer;
                 &:hover {
-                    background-color: @ligherGray;
+                    background-color: @whiteOpacity;
                 }
             }
         }
     }
     .innerpage-container {
         min-height: 625px;
-    }    
+    }
 }
 

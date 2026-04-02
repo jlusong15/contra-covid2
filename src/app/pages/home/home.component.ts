@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.bannerTitle = "Hello World";
+    this.bannerTitle = "Hello World!";
     this.bannerDetails = [
       "ConTra means Contact Tracing.",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a augue neque. Integer ullamcorper tempor tempor. Aenean blandit.",
