@@ -11,7 +11,6 @@
   },
   "private": true,
   "dependencies": {
-    "-": "0.0.1",
     "@angular/animations": "^20.3.17",
     "@angular/common": "^20.3.17",
     "@angular/compiler": "^20.3.17",
