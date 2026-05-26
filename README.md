@@ -1,6 +1,7 @@
 ### ContraCovid v2 by Jennifer Bautista
 
 This contact tracing app project that was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12 initially.
+
 Demo deployed on https://contra-covid2-git-master-jlusong15s-projects.vercel.app/
 
 ### Updates
